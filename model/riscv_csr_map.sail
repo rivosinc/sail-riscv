@@ -111,6 +111,8 @@ mapping clause csr_name_map = 0x143  <-> "stval"
 mapping clause csr_name_map = 0x144  <-> "sip"
 /* supervisor protection and translation */
 mapping clause csr_name_map = 0x180  <-> "satp"
+/* supervisor QoS configuration ID */
+mapping clause csr_name_map = 0x181  <-> "sqoscfg"
 /* machine information registers */
 mapping clause csr_name_map = 0xF11  <-> "mvendorid"
 mapping clause csr_name_map = 0xF12  <-> "marchid"

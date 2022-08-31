@@ -148,6 +148,9 @@ function is_CSR_defined (csr : csreg, p : Privilege) -> bool =
     /* supervisor mode: address translation */
     0x180 => haveSupMode() & (p == Machine | p == Supervisor), // satp
 
+    /* supervisor mode: QoS configuration IDs */
+    0x181 => haveSupMode() & (p == Machine | p == Supervisor), // sqoscfg
+
     /* user mode: counters */
     0xC00 => haveUsrMode(),    // cycle
     0xC01 => haveUsrMode(),    // time

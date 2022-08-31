@@ -769,6 +769,19 @@ function legalize_satp32(a : Architecture, o : bits(32), v : bits(32)) -> bits(3
   v
 }
 
+bitfield Sqoscfg : bits(32) = {
+  MCID : 27 .. 16,
+  RCID : 11 .. 0
+}
+
+register sqoscfg : Sqoscfg
+
+function legalize_sqoscfg(s : Sqoscfg, v : xlenbits) -> Sqoscfg = {
+  let s = update_MCID(s, v[27 .. 16]);
+  let s = update_RCID(s, v[11 .. 0]);
+  s
+}
+
 /* disabled trigger/debug module */
 register tselect : xlenbits
 
